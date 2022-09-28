@@ -5,4 +5,13 @@ class CheesesController < ApplicationController
     render json: cheeses
   end
 
+  def show
+    # Find cheese using id from the url
+    cheese = Cheese.find_by(id: params[:id])
+    # Send json response using cheese object
+    render json: cheese
+
+
+  end
+
 end
